@@ -13,7 +13,7 @@ def payment_process(request):
         # create and submit transaction
         result = braintree.Transaction.sale({
             'amount': '{:.2f}'.format(order.get_toal_cost()),
-            'payment.method_nonce': nonce,
+            'payment_method_nonce': nonce,
             'options': {
                 'submit_for_settlement': True
             }
